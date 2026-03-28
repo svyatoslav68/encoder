@@ -1,0 +1,13 @@
+#ifndef ENCODER_H
+#define ENCODER_H
+
+#define DDR_ENCODER DDRB
+#define PORT_ENCODER PORTB
+#define PIN_ENCODER PINB
+
+#define ENCODER_CHANNEL_A PORTB1
+#define ENCODER_CHANNEL_B PORTB2
+
+void init_encoder();
+
+#endif // ENCODER_H
