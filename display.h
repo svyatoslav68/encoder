@@ -53,8 +53,8 @@
 /* Назначаем порты, отвественные за вывод на дисплей */
 #define DIRECT_DISPLAY DDRA
 #define PORT_DISPLAY PORTA
-#define DIRECT_DIGITS DDRC
-#define PORT_DIGITS PORTC
+#define DIRECT_DIGITS DDRB
+#define PORT_DIGITS PORTB
 
 #define PORT_DIGIT_0 5
 #define PORT_DIGIT_1 6

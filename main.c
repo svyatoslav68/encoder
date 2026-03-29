@@ -16,13 +16,15 @@
 volatile uint8_t flags = 0x00;
 
 void init() {
+	sei();
 }
 
 int main(void)
 {
-    init();
     init_encoder();
+	init_ports_display();
     start_timer0();
+	init();
     while (1){
 	    if (flags & (1 << FLAG_TIMER)){
 		    flags &= ~(1 << FLAG_TIMER);

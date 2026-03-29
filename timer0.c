@@ -10,6 +10,7 @@ volatile uint8_t number_repeat_timer0 = 0;
 
 ISR(TIMER0_COMP_vect) {
 	if (++number_repeat_timer0 == NUMBER_REPEAT_DISPLAY){
+		number_repeat_timer0 = 0;
 		flags |= (1 << FLAG_DISPLAY);		
 	}
 	flags |= 1 << FLAG_TIMER;
