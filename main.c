@@ -28,6 +28,7 @@ int main(void)
     while (1){
 	    if (flags & (1 << FLAG_TIMER)){
 		    flags &= ~(1 << FLAG_TIMER);
+			reading_encoder();
 	    }
 	    if (flags & (1 << FLAG_DISPLAY)){
 		    flags &= ~(1 << FLAG_DISPLAY);

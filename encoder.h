@@ -7,7 +7,9 @@
 
 #define ENCODER_CHANNEL_A PORTB1
 #define ENCODER_CHANNEL_B PORTB2
+#define PORT_TEST PORTB0
 
 void init_encoder();
+void reading_encoder();
 
 #endif // ENCODER_H

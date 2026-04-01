@@ -14,8 +14,8 @@ void init_ports_display(){
 	DIRECT_DISPLAY = 0xFF;
 	for (uint8_t i = 0; i < NUMBER_DISPLAYING_DIGIT; ++i){
 		mask_digits =  (1 << (PORT_DIGIT_0 + i));
-		DIRECT_DIGITS |= mask_digits;
 	}
+	DIRECT_DIGITS |= mask_digits;
 }
 
 void display_number(){
@@ -33,6 +33,6 @@ void display_number(){
 	}
 	PORT_DISPLAY = byte_data;	
 	PORT_DIGITS &= ~mask_digits;
-	PORT_DIGITS = (1 << (PORT_DIGIT_0 + number_digit));
+	PORT_DIGITS |= (1 << (PORT_DIGIT_0 + number_digit));
 	//sei();
 }
