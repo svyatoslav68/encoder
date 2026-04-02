@@ -17,6 +17,7 @@ volatile uint8_t flags = 0x00;
 
 void init() {
 	sei();
+	//flags |= 1 << FLAG_TIMER;
 }
 
 int main(void)
