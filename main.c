@@ -30,6 +30,9 @@ int main(void)
 	    if (flags & (1 << FLAG_TIMER)){
 		    flags &= ~(1 << FLAG_TIMER);
 			reading_encoder();
+			reading_encoder();
+			reading_encoder();
+			reading_encoder();
 	    }
 	    if (flags & (1 << FLAG_DISPLAY)){
 		    flags &= ~(1 << FLAG_DISPLAY);
