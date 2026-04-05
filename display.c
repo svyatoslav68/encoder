@@ -23,7 +23,7 @@ void display_number(){
 	static uint8_t number_digit = 0; // Номер отображаемого разряда
 	/* Байт, записываемый в порт для отображения соответствующего числа
 	 * Сначала его сбросим, потом запишем то, что нужно */
-	cli();
+	//cli();
 	uint8_t byte_data = 0x00; 
 	number_digit = ++number_digit % 2;
 	if (displaying_number > 99){
@@ -35,5 +35,5 @@ void display_number(){
 	PORT_DISPLAY = byte_data;	
 	PORT_DIGITS &= ~mask_digits;
 	PORT_DIGITS |= (1 << (PORT_DIGIT_0 + number_digit));
-	sei();
+	//sei();
 }

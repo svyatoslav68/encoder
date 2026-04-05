@@ -25,6 +25,6 @@ void start_timer0(){
 	TCCR0 |= CLOCK_SELECT_BITS_TIMER0;
 }
 
-void stoptimer0(){
+void stop_timer0(){
 	TCCR0 &= ~(CLOCK_SELECT_BITS_TIMER0);
 }
