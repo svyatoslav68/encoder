@@ -4,10 +4,10 @@
 
 #include "display.h"
 
-uint8_t EEMEM digits[] = {IND_ZERO, IND_ONE, IND_TWO, IND_THREE, IND_FOUR, IND_FIVE, IND_SIX, IND_SEVEN, IND_EIGHT, IND_NINE, IND_DOT, IND_MINUS};
+const uint8_t EEMEM digits[] = {IND_ZERO, IND_ONE, IND_TWO, IND_THREE, IND_FOUR, IND_FIVE, IND_SIX, IND_SEVEN, IND_EIGHT, IND_NINE, IND_DOT, IND_MINUS};
 
 static uint8_t mask_digits = 0x00;
-uint8_t displaying_number = 25; // Отображаемое на индикаторе число
+volatile uint8_t displaying_number = 25; // Отображаемое на индикаторе число
 
 void init_ports_display(){
 	// Для отображения цифр используется весь порт
@@ -20,7 +20,7 @@ void init_ports_display(){
 }
 
 void display_number(){
-	static uint8_t number_digit = 0; // Номер отображаемого разряда
+	volatile static uint8_t number_digit = 0; // Номер отображаемого разряда
 	/* Байт, записываемый в порт для отображения соответствующего числа
 	 * Сначала его сбросим, потом запишем то, что нужно */
 	//cli();
